@@ -11,7 +11,12 @@ router.get('/', function(req, res){
         }
         res.render('index', object);
     });
-
-    
 });
+
+router.post('/api/burgers', function(req, res){
+    burger.insertOne('burger_name', [req.body.name], function(result){
+        res.json(true);
+    })
+});
+
 module.exports = router;
