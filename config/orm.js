@@ -18,7 +18,7 @@ var orm = {
         queryString += ' (' + col.toString() + ') ';
         queryString += 'VALUES';
         queryString += ' ("' + val.toString() + '");';
-        console.log(queryString)
+        
         connection.query(queryString, function(err, result) {
             if (err) {
             throw err;
@@ -32,7 +32,6 @@ var orm = {
         queryString += ' SET ' + colObj;
         queryString += ' WHERE ' + condition + ";";
 
-        console.log(queryString)
         connection.query(queryString, function(err, result) {
             if (err) {
             throw err;
@@ -43,7 +42,7 @@ var orm = {
 
     deleteAll: function(table, cb){
         var queryString = "Truncate " + table + ";";
-        console.log(queryString);
+
         connection.query(queryString, function(err, result) {
             if (err) {
             throw err;
