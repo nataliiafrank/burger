@@ -1,7 +1,7 @@
 // Import (require) connection
 var connection = require('../config/connection.js');
 
-// Create orm object with the methods that will execute the necessary MySQL commands in the controllers
+// Orm object with the methods that will execute the necessary MySQL commands in the controllers
 var orm = {
     selectAll: function(tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
@@ -27,8 +27,29 @@ var orm = {
         });
     },
 
-    updateOne: function() {
+    updateOne: function(table, colObj, condition, cb) {
+        var queryString = "UPDATE " + table;
+        queryString += ' SET ' + colObj;
+        queryString += ' WHERE ' + condition + ";";
 
+        console.log(queryString)
+        connection.query(queryString, function(err, result) {
+            if (err) {
+            throw err;
+            }
+            cb(result);
+        });
+    },
+
+    deleteAll: function(table, cb){
+        var queryString = "Truncate " + table + ";";
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+            if (err) {
+            throw err;
+            }
+            cb(result);
+        });
     }
 }
 

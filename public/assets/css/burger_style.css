@@ -70,13 +70,13 @@ h1 {
     width: 100%;
     border: none;
     border-radius: 5px;
-    padding: 18px;
+    padding: 16px;
     margin-bottom: 20px;
     box-shadow: inset 3px 4px 5px rgba(136, 136, 136, 0.673);
+    font-size: 18px;
 }
 
-#submit {
-    background-color: #ff9a18;
+.btn {
     font-family: 'Libre Baskerville', serif;
     text-transform: uppercase;
     font-size: 18px;
@@ -86,6 +86,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+#submit {
+    background-color: #ff9a18;
+}
+
 .row {
     overflow: hidden;
     width: 100%;
@@ -93,11 +97,15 @@ h1 {
 }
 
 .col {
-    width: 33.3%;
+    width: 35%;
     float: left;
     height: 45vh;
     position: relative;
     text-align: center;
+}
+
+#col-1 {
+    width: 30%;
 }
 
 .panels {
@@ -119,6 +127,9 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+.panels ul li {
+    list-style: none;
+}
 
 .active {
     background-color: rgba(255, 255, 255, 0.9);
@@ -128,7 +139,11 @@ h1 {
     color: #ff9a18;
 }
 
-#devoder-instr {
+.unactive {
+    color: #555;
+}
+
+#clear-all {
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -136,3 +151,29 @@ h1 {
     text-align: center;
 }
 
+#clear-btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ff9a18;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+#clear-btn:focus,
+#burger-input:focus {outline:0;}
+
+#clear-btn:hover,
+#submit:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.devoure {
+    border: 1px solid #ff9a18;
+    margin-left: 5px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.devoure:hover {
+    background-color: #ff9a18;
+}
